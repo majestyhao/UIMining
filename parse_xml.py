@@ -5,11 +5,11 @@ import re
 import os
 
 def visit(arg, dirname, files):
-    if re.search('layout', dirname):
+    if re.search('res/layout', dirname):
         for filename in files:
             if re.search('\.xml', filename):
                 print filename
-                extract_text(dirname + filename)
+                extract_text(dirname + '/' + filename)
 
 def extract_text(filename):
     tree = ET.ElementTree(file=filename)
@@ -33,4 +33,4 @@ def extract_text(filename):
     csv_file.write('\n')
     csv_file.close()
 
-os.path.walk('/home/hao/Downloads/apktool/crackme0502/res/layout/', visit, None)
+os.path.walk('/home/hao/Downloads/apktool/', visit, None)
