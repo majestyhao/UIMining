@@ -1,0 +1,1 @@
+parse_xml.py: read the text content from UI layout files and store them into a csv file
